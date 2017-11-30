@@ -72,13 +72,13 @@ Defining guard and exit nodes by fingerprint:
 
 2. A strict selection of the Tor exit and entry nodes influences the anonymity of the connection by making it easier to conduct traffic and correlation analysis. However, it can also reduce the chances of using a node or set of nodes that are under the control of adversaries.
 
-3. Is it possible to exclude nodes? When should this be done?
+3. It is possible to exclude nodes. This should be done when you know the node is under an adversary's control, but otherwise, anonymity strength is dependent on sets. When a user excludes nodes of particular countries, let's say the five-eyes countries, it will likely make surveillance more powerful, since the user will be going through FAR fewer nodes.
 
 ### Tor Bridges
 
 1. Get a bridge that you can use to connect to the Tor network and give its IP, port, and fingerprint. How did you get these pieces of information? What are other methods to get a bridge?
 
-2. In which situations is the application of bridges useful? Does the method to get a bridge that you chose before work in such situations?
+2. In which situations is the application of bridges useful? Does the method to get a bridge that you chose before work in such situations? A bridge is useful when an ISP is attempting to block connections to known Tor relays.
 
 ### Set Up a Tor Hidden Service
 
