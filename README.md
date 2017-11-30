@@ -13,6 +13,7 @@
 
 2. Disable password authentication, and use an SSH key to access the server with a new account (not root):
 ![Pass](imgs/no_password.jpg)
+![Other User](imgs/other_user.jpg)
 
 3. On your VPS, install ufw, and use it to ensure that your server drops all traffic that is not an SSH session from your current IP address, or a web request from 127.0.0.1 on port 8080:
 ![UFW](imgs/ufw_permissions.jpg)
@@ -83,7 +84,7 @@ Defining guard and exit nodes by fingerprint:
 
 1. Using your VPS, install tor, and set up a hidden service using the tor documentation. On your *local* computer, use the tor browser to visit your site (the address is found in $HOME/hidden_service/hostname). Turn in the onion address for your working hidden service in a file called 'hidden_service_address'.
  ```4xndivyuzsy44a7w.onion```
- 
+
 2. How is the service hidden, i.e., why can users not reveal the location of the service (in the network) and still use it? The Tor protocol picks 3 onion routers at random, builds circuits to them, treating them as introduction (or contact) points; since this is a circuit, there is no direct connection, so no IP addresses are shared, just public keys. These public keys work toward "shaking hands" at a rendezvous point. If the handshake happens, the rendezvous point connects Alice's and Bob's circuits, and then they can communicate anonymously.
 
 3. Is there a way to still reveal information about the operators or the locations of a hidden service? There are many ways that important information may be revealed; looking at my hidden service's logs, there is information like browser and operating system. Keys can be compromised, correlational attacks can be carried out, there can be hostile code, and hostile ORs can be listed.
