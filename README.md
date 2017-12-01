@@ -20,6 +20,18 @@
 
 4. Install apache2. Edit the file /var/www/html/index.html to contain exactly the string 'DOWN WITH CYBERCRUD': *You will have the link*
 
+### MITMPROXY
+
+In this case I set up a virtual Android device, ran MITM proxy, and logged the traffic through that—though, I didn't specifically filter on the sites traffic alone, and then analytics traffic. First I went to a McDonalds site for fun, looking at both sets of traffic.
+
+![Chicken Nuggets](imgs/mitmproxy.jpg)
+
+Then, after installing the MITM certificate, I went and logged into a Github profile. It was surprising to see in the POST request that the login and password were shown on MITM in cleartext. I blocked that out, but below, you can see the details.
+
+![Github](imgs/mitmproxy2.jpg)
+
+
+
 ## Tor
 
 ### Onion Proxy
